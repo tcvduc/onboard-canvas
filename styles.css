@@ -1,0 +1,17 @@
+#my_canvas {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #111;
+  margin: 12px 0;
+}
+
+.onboard_title {
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 12px;
+}
+
+#canvas_circle {
+  border: 1px solid #111;
+  margin: 12px 0;
+}
