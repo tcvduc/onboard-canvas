@@ -1,0 +1,29 @@
+function drawAline11() {
+  const canvas = document.getElementById("draw_a_line_canvas_11");
+
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline11";
+  canvas_index.style = "padding-left:12px";
+  canvas.insertAdjacentElement("afterend", canvas_index);
+
+  /**
+   *
+   * @param {HTMLCanvasElement} canvas
+   */
+  function draw(canvas) {
+    const c = canvas.getContext("2d");
+
+    let moveToX = canvas.width;
+    let moveToY = 0;
+    let lineToX = 0;
+    let lineToY = canvas.height;
+    const ten = 10;
+    const twenty = 20;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+  }
+  draw(canvas);
+}

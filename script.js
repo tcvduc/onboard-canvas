@@ -253,9 +253,12 @@ function generateCanvasForDrawALinePractise3() {
 }
 function drawAline10() {
   const canvas = document.getElementById("draw_a_line_canvas_10");
+
   const canvas_index = document.createElement("div");
   canvas_index.textContent = "drawAline10";
+  canvas_index.style = "padding-left:12px";
   canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
@@ -354,6 +357,38 @@ function drawAline10() {
     c.moveTo(moveToX, moveToY);
     c.lineTo(lineToX, lineToY);
     c.stroke();
+
+    moveToX = 0;
+    moveToY = 0;
+    lineToX = canvas.width;
+    lineToY = canvas.height;
+
+    moveToX += twenty;
+    moveToY = 0;
+    lineToX = canvas.width;
+    lineToY -= ten;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    moveToX += twenty;
+    moveToY = 0;
+    lineToX = canvas.width;
+    lineToY -= ten;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    moveToX += twenty;
+    moveToY = 0;
+    lineToX = canvas.width;
+    lineToY -= ten;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
   }
   draw(canvas);
 }
@@ -361,60 +396,244 @@ function drawAline10() {
 function drawAline11() {
   const canvas = document.getElementById("draw_a_line_canvas_11");
 
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline11";
+  canvas_index.style = "padding-left:12px";
+  canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    const c = canvas.getContext("2d");
+
+    let moveToX = canvas.width;
+    let moveToY = 0;
+    let lineToX = 0;
+    let lineToY = canvas.height;
+    const ten = 10;
+    const twenty = 20;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    moveToX = canvas.width;
+    moveToY = 0;
+    lineToX = 0;
+    lineToY = canvas.height;
+
+    moveToX -= twenty;
+    moveToY = 0;
+    lineToX = 0;
+    lineToY -= ten;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    moveToX -= twenty;
+    moveToY = 0;
+    lineToX = 0;
+    lineToY -= ten;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    moveToX -= twenty;
+    moveToY = 0;
+    lineToX = 0;
+    lineToY -= ten;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    moveToX -= twenty;
+    moveToY = 0;
+    lineToX = 0;
+    lineToY -= ten;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    moveToX = canvas.width;
+    moveToY = 0;
+    lineToX = 0;
+    lineToY = canvas.height;
+
+    moveToX = canvas.width;
+    moveToY += ten;
+    lineToX += twenty;
+    lineToY = canvas.height;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    moveToX = canvas.width;
+    moveToY += ten;
+    lineToX += twenty;
+    lineToY = canvas.height;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    moveToX = canvas.width;
+    moveToY += ten;
+    lineToX += twenty;
+    lineToY = canvas.height;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+  }
   draw(canvas);
 }
 
 function drawAline12() {
   const canvas = document.getElementById("draw_a_line_canvas_12");
 
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline12";
+  canvas_index.style = "padding-left:12px";
+  canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    const c = canvas.getContext("2d");
+
+    let moveToX = canvas.width / 2;
+    let moveToY = 0;
+    let lineToX = canvas.width / 2;
+    let lineToY = canvas.height;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+
+    c.stroke();
+  }
   draw(canvas);
 }
 
 function drawAline13() {
   const canvas = document.getElementById("draw_a_line_canvas_13");
 
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline13";
+  canvas_index.style = "padding-left:12px";
+  canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    const c = canvas.getContext("2d");
+
+    let moveToX = 0;
+    let moveToY = canvas.height / 2;
+    let lineToX = canvas.width;
+    let lineToY = canvas.height / 2;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+  }
   draw(canvas);
 }
 
 function drawAline14() {
   const canvas = document.getElementById("draw_a_line_canvas_14");
 
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline14";
+  canvas_index.style = "padding-left:12px";
+  canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    const c = canvas.getContext("2d");
+
+    let moveToX = 0;
+    let moveToY = 0;
+    let lineToX = canvas.width;
+    let lineToY = canvas.height;
+    const ten = 10;
+    const twenty = 20;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    moveToX = canvas.width;
+    moveToY = 0;
+    lineToX = 0;
+    lineToY = canvas.height;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+  }
   draw(canvas);
 }
 
 function drawAline15() {
   const canvas = document.getElementById("draw_a_line_canvas_15");
 
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline15";
+  canvas_index.style = "padding-left:12px";
+  canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    let moveToX = canvas.width / 2;
+    let moveToY = 0;
+    let lineToX = canvas.width / 2;
+    let lineToY = canvas.height;
+    const ten = 10;
+    const twenty = 20;
+
+    // vertical line
+    const c = canvas.getContext("2d");
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    // horizontal line
+    moveToX = 0;
+    moveToY = canvas.height / 2;
+    lineToX = canvas.width;
+    lineToY = canvas.height / 2;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+  }
   draw(canvas);
 }
 
 function drawAline16() {
   const canvas = document.getElementById("draw_a_line_canvas_16");
+
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline16";
+  canvas_index.style = "padding-left:12px";
+  canvas.insertAdjacentElement("afterend", canvas_index);
 
   /**
    *
@@ -427,6 +646,11 @@ function drawAline16() {
 function drawAline17() {
   const canvas = document.getElementById("draw_a_line_canvas_17");
 
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline17";
+  canvas_index.style = "padding-left:12px";
+  canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
@@ -437,6 +661,11 @@ function drawAline17() {
 
 function drawAline18() {
   const canvas = document.getElementById("draw_a_line_canvas_18");
+
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline18";
+  canvas_index.style = "padding-left:12px";
+  canvas.insertAdjacentElement("afterend", canvas_index);
 
   /**
    *
@@ -451,7 +680,9 @@ function drawAline19() {
 
   const canvas_index = document.createElement("div");
   canvas_index.textContent = "drawAline19";
+  canvas_index.style = "padding-left:12px;";
   canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
@@ -502,60 +733,344 @@ function drawAline19() {
 function drawAline20() {
   const canvas = document.getElementById("draw_a_line_canvas_20");
 
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline20";
+  canvas_index.style = "padding-left:12px;";
+  canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    const c = canvas.getContext("2d");
+    let moveToX = canvas.width;
+    let moveToY = 0;
+    let lineToX = 0;
+    let lineToY = canvas.height;
+    const ten = 10;
+    const twenty = 20;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    // draw top rectangle
+    for (let i = 10; i >= 1; --i) {
+      moveToX -= twenty;
+      moveToY = 0;
+      lineToX = 0;
+      lineToY -= ten;
+
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+
+    // draw bottom rectangle
+    for (let i = 10; i >= 1; --i) {
+      moveToX = canvas.width;
+      moveToY += ten;
+      lineToX += twenty;
+      lineToY = canvas.height;
+
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+  }
   draw(canvas);
 }
 
 function drawAline21() {
   const canvas = document.getElementById("draw_a_line_canvas_21");
 
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline21";
+  canvas_index.style = "padding-left:12px;";
+  canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    const c = canvas.getContext("2d");
+
+    let moveToX = canvas.width / 2;
+    let moveToY = 0;
+    let lineToX = canvas.width / 2;
+    let lineToY = canvas.height;
+    const ten = 10;
+    const twenty = 20;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    // draw left rectangle
+    for (let i = 10; i >= 1; --i) {
+      moveToX -= twenty;
+      moveToY = 0;
+      lineToX -= twenty;
+      lineToY = canvas.height;
+
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+
+    moveToX = canvas.width / 2;
+    moveToY = 0;
+    lineToX = canvas.width / 2;
+    lineToY = canvas.height;
+
+    // draw right rectangle
+    for (let i = 10; i >= 1; --i) {
+      moveToX += twenty;
+      moveToY = 0;
+      lineToX += twenty;
+      lineToY = canvas.height;
+
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+  }
   draw(canvas);
 }
 
 function drawAline22() {
   const canvas = document.getElementById("draw_a_line_canvas_22");
 
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline22";
+  canvas_index.style = "padding-left:12px;";
+  canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    const c = canvas.getContext("2d");
+
+    let moveToX = 0;
+    let moveToY = canvas.height / 2;
+    let lineToX = canvas.width;
+    let lineToY = canvas.height / 2;
+    const ten = 10;
+    const twenty = 20;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    for (let i = 10; i >= 1; --i) {
+      moveToX = 0;
+      moveToY -= ten;
+      lineToX = canvas.width;
+      lineToY -= ten;
+
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+
+    moveToX = 0;
+    moveToY = canvas.height / 2;
+    lineToX = canvas.width;
+    lineToY = canvas.height / 2;
+
+    for (let i = 10; i >= 1; --i) {
+      moveToX = 0;
+      moveToY += ten;
+      lineToX = canvas.width;
+      lineToY += ten;
+
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+  }
   draw(canvas);
 }
 
 function drawAline23() {
   const canvas = document.getElementById("draw_a_line_canvas_23");
 
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline23";
+  canvas_index.style = "padding-left:12px;";
+  canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    const c = canvas.getContext("2d");
+    const path = document.createElement("a");
+    path.textContent = "dasdasd";
+
+    // right diagonal region
+
+    let moveToX = canvas.width;
+    let moveToY = 0;
+    let lineToX = 0;
+    let lineToY = canvas.height;
+    const ten = 10;
+    const twenty = 20;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    for (let i = 10; i >= 1; --i) {
+      moveToY += ten;
+      lineToX += twenty;
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+
+    moveToX = canvas.width;
+    moveToY = 0;
+    lineToX = 0;
+    lineToY = canvas.height;
+
+    for (let i = 10; i >= 1; --i) {
+      moveToX -= twenty;
+      moveToY = 0;
+      lineToX = 0;
+      lineToY -= ten;
+
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+
+    // left diagonal region
+    moveToX = 0;
+    moveToY = 0;
+    lineToX = canvas.width;
+    lineToY = canvas.height;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    for (let i = 10; i >= 1; --i) {
+      moveToX += twenty;
+      lineToY -= ten;
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+
+    moveToX = 0;
+    moveToY = 0;
+    lineToX = canvas.width;
+    lineToY = canvas.height;
+    for (let i = 10; i >= 1; --i) {
+      moveToY += ten;
+      lineToX -= twenty;
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+  }
   draw(canvas);
 }
 
 function drawAline24() {
   const canvas = document.getElementById("draw_a_line_canvas_24");
 
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline24";
+  canvas_index.style = "padding-left:12px;";
+  canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    // vertical line
+    let moveToX = canvas.width / 2;
+    let moveToY = 0;
+    let lineToX = canvas.width / 2;
+    let lineToY = canvas.height;
+    const ten = 10;
+    const twenty = 20;
+
+    const c = canvas.getContext("2d");
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    for (let i = 10; i >= 1; --i) {
+      moveToX += twenty;
+      lineToX += twenty;
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+
+    moveToX = canvas.width / 2;
+    moveToY = 0;
+    lineToX = canvas.width / 2;
+    lineToY = canvas.height;
+
+    for (let i = 10; i >= 1; --i) {
+      moveToX -= twenty;
+      lineToX -= twenty;
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+
+    // horizontal line
+    moveToX = 0;
+    moveToY = canvas.height / 2;
+    lineToX = canvas.width;
+    lineToY = canvas.height / 2;
+
+    c.moveTo(moveToX, moveToY);
+    c.lineTo(lineToX, lineToY);
+    c.stroke();
+
+    for (let i = 10; i >= 1; --i) {
+      moveToY -= ten;
+      lineToY -= ten;
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+
+    moveToX = 0;
+    moveToY = canvas.height / 2;
+    lineToX = canvas.width;
+    lineToY = canvas.height / 2;
+
+    for (let i = 10; i >= 1; --i) {
+      moveToY += ten;
+      lineToY += ten;
+      c.moveTo(moveToX, moveToY);
+      c.lineTo(lineToX, lineToY);
+      c.stroke();
+    }
+  }
   draw(canvas);
 }
 
 function drawAline25() {
   const canvas = document.getElementById("draw_a_line_canvas_25");
+
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline25";
+  canvas_index.style = "padding-left:12px;";
+  canvas.insertAdjacentElement("afterend", canvas_index);
 
   /**
    *
@@ -568,6 +1083,11 @@ function drawAline25() {
 function drawAline26() {
   const canvas = document.getElementById("draw_a_line_canvas_26");
 
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline26";
+  canvas_index.style = "padding-left:12px;";
+  canvas.insertAdjacentElement("afterend", canvas_index);
+
   /**
    *
    * @param {HTMLCanvasElement} canvas
@@ -578,6 +1098,11 @@ function drawAline26() {
 
 function drawAline27() {
   const canvas = document.getElementById("draw_a_line_canvas_27");
+
+  const canvas_index = document.createElement("div");
+  canvas_index.textContent = "drawAline27";
+  canvas_index.style = "padding-left:12px;";
+  canvas.insertAdjacentElement("afterend", canvas_index);
 
   /**
    *
