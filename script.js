@@ -639,7 +639,44 @@ function drawAline16() {
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    const c = canvas.getContext("2d");
+    let movetox = canvas.width;
+    let movetoy = canvas.height;
+    let linetox = 0;
+    let linetoy = 0;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    movetox = 0;
+    movetoy = canvas.height;
+    linetox = canvas.width;
+    linetoy = 0;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    movetox = canvas.width / 2;
+    movetoy = 0;
+    linetox = canvas.width / 2;
+    linetoy = canvas.height;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    movetox = 0;
+    movetoy = canvas.height / 2;
+    linetox = canvas.width;
+    linetoy = canvas.height / 2;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+  }
   draw(canvas);
 }
 
@@ -655,7 +692,83 @@ function drawAline17() {
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    const c = canvas.getContext("2d");
+    const w = canvas.width;
+    const h = canvas.height;
+
+    let linetox = w;
+    let linetoy = h;
+    let movetox = 0;
+    let movetoy = 0;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    movetox = 0;
+    movetoy = h;
+    linetox = w;
+    linetoy = 0;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    movetox = w;
+    movetoy = h / 2;
+    linetox = 0;
+    linetoy = h / 2;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    movetox = w / 2;
+    movetoy = h;
+    linetox = w / 2;
+    linetoy = 0;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    movetox = 0;
+    movetoy = h / 2;
+    linetox = w / 2;
+    linetoy = h;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    movetox = w / 2;
+    movetoy = h;
+    linetox = w;
+    linetoy = h / 2;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    movetox = w;
+    movetoy = h / 2;
+    linetox = w / 2;
+    linetoy = 0;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    movetox = w / 2;
+    movetoy = 0;
+    linetox = 0;
+    linetoy = h / 2;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+  }
   draw(canvas);
 }
 
@@ -1076,7 +1189,148 @@ function drawAline25() {
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    const c = canvas.getContext("2d");
+    const w = canvas.width;
+    const h = canvas.height;
+    const ten = 10;
+    const twenty = 20;
+
+    let movetox = w;
+    let movetoy = h;
+    let linetox = 0;
+    let linetoy = 0;
+
+    // left diagonal line
+    function drawFullCanvasLeftDiagonal() {
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+      for (let i = 10; i >= 1; --i) {
+        movetox -= twenty;
+        linetoy += ten;
+        c.moveTo(movetox, movetoy);
+        c.lineTo(linetox, linetoy);
+        c.stroke();
+      }
+
+      movetox = w;
+      movetoy = h;
+      linetox = 0;
+      linetoy = 0;
+
+      for (let i = 10; i >= 1; --i) {
+        movetoy -= ten;
+        linetox += twenty;
+        c.moveTo(movetox, movetoy);
+        c.lineTo(linetox, linetoy);
+        c.stroke();
+      }
+    }
+
+    // right diagonal line
+    function drawFullCanvasRightDiagonal() {
+      movetox = 0;
+      movetoy = h;
+      linetox = w;
+      linetoy = 0;
+
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+
+      for (let i = 10; i >= 0; --i) {
+        movetox += twenty;
+        linetoy += ten;
+
+        c.moveTo(movetox, movetoy);
+        c.lineTo(linetox, linetoy);
+        c.stroke();
+      }
+      movetox = 0;
+      movetoy = h;
+      linetox = w;
+      linetoy = 0;
+      for (let i = 10; i >= 0; --i) {
+        movetoy -= ten;
+        linetox -= twenty;
+        c.moveTo(movetox, movetoy);
+        c.lineTo(linetox, linetoy);
+        c.stroke();
+      }
+    }
+
+    // vertical line
+    function drawFullCanvasVerticleLine() {
+      movetox = w / 2;
+      movetoy = h;
+      linetox = w / 2;
+      linetoy = 0;
+
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+
+      for (let i = 10; i >= 1; --i) {
+        movetox -= twenty;
+        linetox -= twenty;
+        c.moveTo(movetox, movetoy);
+        c.lineTo(linetox, linetoy);
+        c.stroke();
+      }
+      movetox = w / 2;
+      movetoy = h;
+      linetox = w / 2;
+      linetoy = 0;
+
+      for (let i = 10; i >= 1; --i) {
+        movetox += twenty;
+        linetox += twenty;
+        c.moveTo(movetox, movetoy);
+        c.lineTo(linetox, linetoy);
+        c.stroke();
+      }
+    }
+
+    // horizontal line
+    function drawFullCanvasHorizontalLine() {
+      movetox = w;
+      movetoy = h / 2;
+      linetox = 0;
+      linetoy = h / 2;
+
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+
+      for (let i = 10; i >= 1; --i) {
+        movetoy += ten;
+        linetoy += ten;
+        c.moveTo(movetox, movetoy);
+        c.lineTo(linetox, linetoy);
+        c.stroke();
+      }
+
+      movetox = w;
+      movetoy = h / 2;
+      linetox = 0;
+      linetoy = h / 2;
+
+      for (let i = 10; i >= 1; --i) {
+        movetoy -= ten;
+        linetoy -= ten;
+        c.moveTo(movetox, movetoy);
+        c.lineTo(linetox, linetoy);
+        c.stroke();
+      }
+    }
+
+    drawFullCanvasLeftDiagonal();
+    drawFullCanvasRightDiagonal();
+
+    drawFullCanvasVerticleLine();
+    drawFullCanvasHorizontalLine();
+  }
   draw(canvas);
 }
 
@@ -1092,7 +1346,134 @@ function drawAline26() {
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    const w = canvas.width;
+    const h = canvas.height;
+    const c = canvas.getContext("2d");
+
+    let movetox = w;
+    let movetoy = h;
+    let linetox = 0;
+    let linetoy = 0;
+
+    function drawLeftDiagonal() {
+      movetox = w;
+      movetoy = h;
+      linetox = 0;
+      linetoy = 0;
+
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+    }
+
+    function drawRightDiagonal() {
+      movetox = 0;
+      movetoy = h;
+      linetox = w;
+      linetoy = 0;
+
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+    }
+
+    function drawMiddleVerticalLine() {
+      movetox = w;
+      movetoy = h / 2;
+      linetox = 0;
+      linetoy = h / 2;
+
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+    }
+
+    function drawMiddleHorizontalLine() {
+      movetox = w / 2;
+      movetoy = h;
+      linetox = w / 2;
+      linetoy = 0;
+
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+    }
+
+    function drawRhombusShape() {
+      movetox = 0;
+      movetoy = h / 2;
+      linetox = w / 2;
+      linetoy = h;
+
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+
+      movetox = w / 2;
+      movetoy = h;
+      linetox = w;
+      linetoy = h / 2;
+
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+
+      movetox = w;
+      movetoy = h / 2;
+      linetox = w / 2;
+      linetoy = 0;
+
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+
+      movetox = w / 2;
+      movetoy = 0;
+      linetox = 0;
+      linetoy = h / 2;
+
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+    }
+
+    const colorizeNumber1 = 0.5;
+    const colorizeNumber2 = 2;
+    const colorizeNumber = 1;
+
+    movetox = w / 2;
+    movetoy = h;
+    linetox = 0;
+    linetoy = h / 2;
+
+    for (let movetox = w / 2; movetox <= w; ++movetox) {
+      movetoy = (-1 / 2) * movetox + 150;
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+      // eureka !!!!
+    }
+
+    for (let i = 50; i >= 1; --i) {
+      // movetox += colorizeNumber;
+      // movetoy += movetox * (-1 / 2) + 150;
+      // linetox += colorizeNumber;
+      // linetoy = linetox * (-1 / 2) + 50;
+
+      c.moveTo(movetox, movetoy);
+      c.lineTo(linetox, linetoy);
+      c.stroke();
+    }
+
+    function colorizeRhombusShape() {}
+
+    drawLeftDiagonal();
+    drawRightDiagonal();
+    drawMiddleVerticalLine();
+    drawMiddleHorizontalLine();
+    drawRhombusShape();
+  }
   draw(canvas);
 }
 
