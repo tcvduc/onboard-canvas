@@ -1455,15 +1455,11 @@ function drawAline26() {
       // eureka !!!!
     }
 
-    for (let i = 50; i >= 1; --i) {
-      // movetox += colorizeNumber;
-      // movetoy += movetox * (-1 / 2) + 150;
-      // linetox += colorizeNumber;
-      // linetoy = linetox * (-1 / 2) + 50;
-
-      c.moveTo(movetox, movetoy);
-      c.lineTo(linetox, linetoy);
-      c.stroke();
+    for (let movetox = w / 2; movetox <= w; ++i) {
+      // movetoy = (1 / 2) * movetox - 50;
+      // c.moveTo(movetox, movetoy);
+      // c.lineTo(linetox, linetoy);
+      // c.stroke();
     }
 
     function colorizeRhombusShape() {}
