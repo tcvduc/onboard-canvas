@@ -226,12 +226,22 @@ function generateCanvasForDrawALinePractise2() {
     "draw_a_line_practise_2"
   );
   for (let i = 10; i <= 18; ++i) {
-    const canvas_draw_a_line_practise_i = document.createElement("canvas");
-    canvas_draw_a_line_practise_i.id = `draw_a_line_canvas_${i}`;
-    canvas_draw_a_line_practise_i.width = 200;
-    canvas_draw_a_line_practise_i.height = 100;
-    canvas_draw_a_line_practise_i.style = "border:1px solid #111;margin:12px";
-    draw_a_line_practise_2.appendChild(canvas_draw_a_line_practise_i);
+    if (i !== 18) {
+      const canvas_draw_a_line_practise_i = document.createElement("canvas");
+      canvas_draw_a_line_practise_i.id = `draw_a_line_canvas_${i}`;
+      canvas_draw_a_line_practise_i.width = 200;
+      canvas_draw_a_line_practise_i.height = 100;
+      canvas_draw_a_line_practise_i.style = "border:1px solid #111;margin:12px";
+      draw_a_line_practise_2.appendChild(canvas_draw_a_line_practise_i);
+    }
+    if (i === 18) {
+      const canvas_draw_a_line_practise_i = document.createElement("canvas");
+      canvas_draw_a_line_practise_i.id = `draw_a_line_canvas_${i}`;
+      canvas_draw_a_line_practise_i.width = 200;
+      canvas_draw_a_line_practise_i.height = 200;
+      canvas_draw_a_line_practise_i.style = "border:1px solid #111;margin:12px";
+      draw_a_line_practise_2.appendChild(canvas_draw_a_line_practise_i);
+    }
   }
 }
 
@@ -784,7 +794,150 @@ function drawAline18() {
    *
    * @param {HTMLCanvasElement} canvas
    */
-  function draw(canvas) {}
+  function draw(canvas) {
+    const c = canvas.getContext("2d");
+    const w = canvas.width;
+    const h = canvas.height;
+    // line 1
+    let movetox = 10;
+    let movetoy = 0;
+    let linetox = w / 3.5;
+    let linetoy = h / 2;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    //2
+    movetox = 0;
+    movetoy = h / 3.3 + 3;
+    linetox = w / 3 + 9;
+    linetoy = h / 2 + 9 + 3;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    //3
+    movetox = 0;
+    movetoy = h / 2 - 3;
+    linetox = w / 3 + 9 + 25;
+    linetoy = h / 2 - 3 + 20;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 4
+    movetox = 0;
+    movetoy = h - 20 + 1;
+    linetox = w / 3 + 9 + 30 + 20;
+    linetoy = h / 2 + 1;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 5
+    movetox = -3 + w / 3.5 + 10;
+    movetoy = h;
+    linetox = -3 + w - w / 3.5;
+    linetoy = h / 2 - 20;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 6
+    movetox = -3 + w - w / 3.5;
+    movetoy = h;
+    linetox = -3 + w - w / 3.5;
+    linetoy = h / 2 - 20 - 20;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 6
+    movetox = -3 + w - w / 3.5;
+    movetoy = h;
+    linetox = -3 + w - w / 3.5;
+    linetoy = h / 2 - 20 - 20;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 7
+    movetox = -12 + w - w / 3.5 + 30;
+    movetoy = h;
+    linetox = -8 + w - w / 3.5 + 30 + 25;
+    linetoy = h - 30;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 8
+    movetox = -5 + -10 + w - w / 3.5 + 30 + 25;
+    movetoy = h;
+    linetox = w;
+    linetoy = h - 70;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 9
+    movetox = w;
+    movetoy = h - 70;
+    linetox = w - 77;
+    linetoy = 40;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 10
+    movetox = w;
+    movetoy = 70 - 7;
+    linetox = w / 2;
+    linetoy = 40 - 7;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 11
+    movetox = w;
+    movetoy = 70 - 20;
+    linetox = w - 10;
+    linetoy = 30;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 12
+    movetox = w;
+    movetoy = 1 + -2 + 70 - 20 - 10;
+    linetox = w - 30;
+    linetoy = 1 + -20 + 30;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 13
+    movetox = w;
+    movetoy = -25 + 1 + -2 + 70 - 20 - 10;
+    linetox = w / 2 + 30;
+    linetoy = -24 + 30;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+  }
   draw(canvas);
 }
 
