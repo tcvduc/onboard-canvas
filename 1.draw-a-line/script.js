@@ -937,6 +937,36 @@ function drawAline18() {
     c.moveTo(movetox, movetoy);
     c.lineTo(linetox, linetoy);
     c.stroke();
+
+    // 14
+    movetox = -23 + w - 30;
+    movetoy = 0;
+    linetox = -23 + w / 2 + 10;
+    linetoy = 20;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 15
+    movetox = 17 + 90;
+    movetoy = 0;
+    linetox = 55;
+    linetoy = 50;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 16
+    movetox = 60;
+    movetoy = 0;
+    linetox = 50;
+    linetoy = 85;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
   }
   draw(canvas);
 }
@@ -1608,7 +1638,7 @@ function drawAline26() {
       // eureka !!!!
     }
 
-    for (let movetox = w / 2; movetox <= w; ++i) {
+    for (let movetox = w / 2; movetox <= w; ++movetox) {
       // movetoy = (1 / 2) * movetox - 50;
       // c.moveTo(movetox, movetoy);
       // c.lineTo(linetox, linetoy);
@@ -1652,7 +1682,6 @@ function drawAline27() {
   canvasDrawALine(my_canvas);
   // logCanvasInfo(my_canvas);
   // canvasDrawACircle(canvas_circle);
-  drawTwoIntersectingRectangles(two_intersecting_rectangles);
   generateCanvasForPractiseDrawALine();
   drawAline1();
   drawAline2();
