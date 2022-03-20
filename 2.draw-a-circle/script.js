@@ -282,13 +282,19 @@ function practiseOne8(canvas) {
   c.beginPath();
   c.moveTo(w / 2, h / 2);
   c.lineTo(w / 2 - radius, h / 2);
-  c.fill();
+
+  let movetoy;
+  for (let movetox = 60; movetox <= 100; ++movetox) {
+    movetoy = -movetox + 110;
+    c.moveTo(movetox, movetoy);
+    c.lineTo(w / 2, h / 2);
+    c.stroke();
+  }
 
   c.stroke();
 
   c.beginPath();
   c.arc(x, y, radius, -pi / 2, -pi, true);
-  // c.arc(x, y, radius, startAngle, endAngle, counterclockwise);
 
   c.fill();
   c.stroke();
@@ -297,12 +303,104 @@ function practiseOne8(canvas) {
  *
  * @param {HTMLCanvasElement} canvas
  */
-function practiseOne7(canvas) {}
+function practiseOne7(canvas) {
+  const c = canvas.getContext("2d");
+  const w = canvas.width;
+  const h = canvas.height;
+  const pi = Math.PI;
+  const pi2 = 2 * Math.PI;
+  let x = w / 2,
+    y = h / 2,
+    radius = 40,
+    startAngle = 0,
+    endAngle = 2 * Math.PI,
+    counterclockwise = false;
+
+  c.beginPath();
+  c.moveTo(w / 2, h / 2);
+  c.lineTo(w / 2, h / 2 - radius);
+  c.stroke();
+
+  c.beginPath();
+  c.moveTo(w / 2, h / 2);
+  c.lineTo(w / 2 + radius, h / 2);
+  c.stroke();
+
+  let movetoy;
+  for (let movetox = 100; movetox <= 140; ++movetox) {
+    movetoy = movetox - 90;
+    c.moveTo(movetox, movetoy);
+    c.lineTo(w / 2, h / 2);
+    c.stroke();
+  }
+
+  c.beginPath();
+  c.arc(x, y, radius, 0, pi + (pi * 1) / 2, true);
+  c.fillStyle = "black";
+  c.fill();
+  c.stroke();
+
+  /**
+   * - pi - 180 deg
+   * - 2 pi - 360 deg
+   *
+   * - pi + pi/2 = 3pi/2 = 3 x 180 / 2 = 270 deg - counterclockwise = false
+   *
+   */
+}
 /**
  *
  * @param {HTMLCanvasElement} canvas
  */
-function practiseOne6(canvas) {}
+function practiseOne6(canvas) {
+  const c = canvas.getContext("2d");
+  const w = canvas.width;
+  const h = canvas.height;
+  const pi = Math.PI;
+  let x = w / 2,
+    y = h / 2,
+    radius = 40,
+    startAngle = 0,
+    endAngle = 2 * Math.PI,
+    counterclockwise = false;
+
+  let temporary = (h - radius * 2) / 2;
+
+  c.beginPath();
+  c.moveTo(w / 2, h / 2);
+  c.lineTo(w / 2, temporary + radius * 2);
+  c.stroke();
+
+  c.beginPath();
+  c.moveTo(w / 2, h / 2);
+  c.lineTo(w / 2 + radius, h / 2);
+  c.stroke();
+
+  let movetoy;
+  for (let movetox = 100; movetox <= 140; ++movetox) {
+    movetoy = -movetox + 190;
+    c.beginPath();
+    c.moveTo(movetox, movetoy);
+    c.lineTo(w / 2, h / 2);
+    c.stroke();
+  }
+
+  c.beginPath();
+  c.arc(x, y, radius, 0, pi / 2, false);
+  c.fillStyle = "black";
+  c.fill();
+  c.stroke();
+
+  /**
+   * - start angle: 0
+   * - end angle: pi / 2 <=> 180 / 2 = 90
+   * - need to understand the start angle and end angle
+   *
+   *
+   *
+   *
+   */
+}
 /**
  *
  * @param {HTMLCanvasElement} canvas
