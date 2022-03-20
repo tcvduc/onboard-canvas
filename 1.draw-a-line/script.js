@@ -967,6 +967,46 @@ function drawAline18() {
     c.moveTo(movetox, movetoy);
     c.lineTo(linetox, linetoy);
     c.stroke();
+
+    // 17
+    movetox = 50;
+    movetoy = -5 + 85;
+    linetox = 50 + 45;
+    linetoy = -5 + 95;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 18
+    movetox = w / 3 + 9;
+    movetoy = h / 2 + 9 + 3;
+    linetox = 50 + 45 + 7;
+    linetoy = -5 + 95 - 7;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 19
+    movetox = w / 3 + 9 + 30 + 20;
+    movetoy = h / 2 + 1;
+    linetox = 50 + 45;
+    linetoy = -5 + 95 - 7 - 7;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
+
+    // 20
+    movetox = -3 + w - w / 3.5;
+    movetoy = h / 2 - 20;
+    linetox = 50 + 45 - 10;
+    linetoy = -5 + 95 - 7 - 7 - 1;
+
+    c.moveTo(movetox, movetoy);
+    c.lineTo(linetox, linetoy);
+    c.stroke();
   }
   draw(canvas);
 }

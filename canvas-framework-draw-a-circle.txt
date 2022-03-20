@@ -1,0 +1,16 @@
+  const c = canvas.getContext("2d");
+  const w = canvas.width;
+  const h = canvas.height;
+  let x = w / 2,
+    y = h / 2,
+    radius = 40,
+    startAngle = 0,
+    endAngle = 2 * Math.PI,
+    counterclockwise = false;
+
+  c.beginPath();
+  c.arc(x, y, radius, startAngle, endAngle, counterclockwise);
+  c.fillStyle = "black";
+  c.strokeStyle = "transparent";
+  c.fill();
+  c.stroke();
