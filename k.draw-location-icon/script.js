@@ -33,37 +33,46 @@ function draw(canvas) {
 
   c.beginPath();
   c.moveTo(temporary + 5, arcy + 25);
-  c.lineTo(w / 2 - 5, h - 25);
+  c.lineTo(w / 2 - 5, h - 60);
   c.stroke();
   c.closePath();
 
-  c.strokeStyle = "#141e4d";
-
   // 3 - right line
   c.beginPath();
-  console.log("x1: ", w - (temporary + 5));
-  console.log("y1: ", arcy + 25);
-  console.log("x2: ", w / 2 + 5);
-  console.log("y2: ", h - 25);
 
-  let movetoy;
+  c.moveTo(w - (temporary + 5), arcy + 25);
+  c.lineTo(w / 2 + 5, h - 60);
+  c.stroke();
+
   let rightlinemovetoy;
-  c.lineWidth = 2.09;
+  for (let rightlinemovetox = 135; rightlinemovetox >= 80; --rightlinemovetox) {
+    rightlinemovetoy = (-24 / 11) * rightlinemovetox + 4340 / 11;
 
-  // colorize
-  for (let k = 10; k >= 0; --k) {
-    for (
-      let movetox = 15, rightlinemovetox = 135;
-      movetox <= 70, rightlinemovetox >= 80;
-      ++movetox, --rightlinemovetox
-    ) {
-      movetoy = (31 / 11) * movetox + 635 / 11;
-      c.moveTo(movetox, movetoy);
+    c.moveTo(rightlinemovetox, rightlinemovetoy);
+    c.lineTo(w / 2, h / 2);
+    c.stroke();
+  }
 
-      rightlinemovetoy = (-31 / 11) * rightlinemovetox + 5285 / 11;
-      c.lineTo(rightlinemovetox, rightlinemovetoy);
-      c.stroke();
-    }
+  c.moveTo(w - (temporary + 5), arcy + 25);
+  c.lineTo(w / 2 + 5, h - 60);
+  c.stroke();
+  c.closePath();
+
+  // colorize left line and right line
+  let leftlinemovetoy;
+  c.lineWidth = 1.9;
+  c.strokeStyle = "#141e4d";
+  for (
+    let leftlinemovetox = 15, rightlinemovetox = 135;
+    leftlinemovetox <= 70, rightlinemovetox >= 80;
+    ++leftlinemovetox, --rightlinemovetox
+  ) {
+    leftlinemovetoy = (24 / 11) * leftlinemovetox + 740 / 11;
+    rightlinemovetoy = (-24 / 11) * rightlinemovetox + 4340 / 11;
+
+    c.moveTo(leftlinemovetox, leftlinemovetoy);
+    c.lineTo(rightlinemovetox, rightlinemovetoy);
+    c.stroke();
   }
 
   // 4 - small circle in the top middle
@@ -75,15 +84,16 @@ function draw(canvas) {
   c.fill();
   c.closePath();
 
+  c.beginPath();
+
   c.moveTo(w - (temporary + 5), arcy + 25);
-  c.lineTo(w / 2 + 5, h - 25);
+  c.lineTo(w / 2 + 5, h - 60);
   c.stroke();
-  c.closePath();
 
   // 5 - small circle at the end
   radius = 5;
-  arcx = w / 2;
-  arcy = h - 27;
+  arcx = w / 2 + 0.2;
+  arcy = h - 62;
   c.fillStyle = "#141e4d";
   c.beginPath();
   c.arc(arcx, arcy, radius, startAngle, endAngle, counterclockwise);
