@@ -13,10 +13,10 @@ function drawAline11() {
   function draw(canvas) {
     const c = canvas.getContext("2d");
 
-    let moveToX = canvas.width;
+    let moveToX = 0;
     let moveToY = 0;
     let lineToX = 0;
-    let lineToY = canvas.height;
+    let lineToY = 0;
     const ten = 10;
     const twenty = 20;
 
