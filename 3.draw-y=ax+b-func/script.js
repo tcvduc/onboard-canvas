@@ -26,8 +26,8 @@ function displayFunctionInfo() {
  * @param {HTMLCanvasElement} my_canvas
  */
 function drawFunction1(my_canvas) {
-  my_canvas.width = 200;
-  my_canvas.height = 100;
+  my_canvas.width = 400;
+  my_canvas.height = 300;
   my_canvas.style = "border:1px solid #111;";
 
   const a = document.getElementById("a").value;
@@ -50,7 +50,7 @@ function drawFunction1(my_canvas) {
   const h = my_canvas.height;
 
   /**
-   * 1. X axis
+   * 1. X axis - done
    * + x axis large horizontal bar - done
    *
    * + x axis arrow - done
@@ -96,7 +96,9 @@ function drawFunction1(my_canvas) {
   c.font = `${textFontSize}px cambria`;
   const xAxisBarWidth = lineToX - moveToX;
   const xAxisBarWidthTotalUnit = 5;
-  const xAxisBarOneUnit = (xAxisBarWidth - 10) / xAxisBarWidthTotalUnit;
+  const spaceBetweenArrowAndTheLastUnit = 10;
+  const xAxisBarOneUnit =
+    (xAxisBarWidth - spaceBetweenArrowAndTheLastUnit) / xAxisBarWidthTotalUnit;
   console.log("xAxisBarWidth: ", xAxisBarWidth);
 
   c.beginPath();
@@ -117,8 +119,9 @@ function drawFunction1(my_canvas) {
   c.stroke();
 
   // x letter - done
+  const spaceBetweenLetterToBarAxis = 4;
   c.beginPath();
-  c.fillText("x", lineToX + 2, lineToY);
+  c.fillText("x", lineToX + spaceBetweenLetterToBarAxis, lineToY);
 
   // + coordinate 0 - done
   //   + coordinate verticle bar - done
@@ -127,28 +130,157 @@ function drawFunction1(my_canvas) {
   const coordinateNumberIndicateY0 = h - h / 3; // h - h / 3; <=> 0 in this context
 
   for (let indicateNumber = 0; indicateNumber <= 5; ++indicateNumber) {
+    if (indicateNumber === 0) {
+      c.beginPath();
+      c.moveTo(
+        coordinateNumberIndicateX0 + xAxisBarOneUnit * indicateNumber,
+        coordinateNumberIndicateY0 - barSize
+      );
+      c.lineTo(
+        coordinateNumberIndicateX0 + xAxisBarOneUnit * indicateNumber,
+        coordinateNumberIndicateY0
+      );
+      c.stroke();
+
+      c.beginPath();
+      c.fillText(
+        indicateNumber,
+        coordinateNumberIndicateX0 -
+          barSize / 2 +
+          xAxisBarOneUnit * indicateNumber,
+        coordinateNumberIndicateY0 + barSize + barSize + barSize
+      );
+    }
+    if (indicateNumber !== 0) {
+      c.beginPath();
+      c.moveTo(
+        coordinateNumberIndicateX0 + xAxisBarOneUnit * indicateNumber,
+        coordinateNumberIndicateY0 - barSize
+      );
+      c.lineTo(
+        coordinateNumberIndicateX0 + xAxisBarOneUnit * indicateNumber,
+        coordinateNumberIndicateY0 + barSize
+      );
+      c.stroke();
+
+      c.beginPath();
+      c.fillText(
+        indicateNumber,
+        coordinateNumberIndicateX0 -
+          barSize / 2 +
+          xAxisBarOneUnit * indicateNumber,
+        coordinateNumberIndicateY0 + barSize + barSize + barSize
+      );
+    }
+  }
+
+  /**
+   * 2. Y axis
+   * + y axis large vertical bar - done
+   *
+   * + y axis arrow - done
+   *   + y axis left diagonal bar - done
+   *   + y axis right diagonal bar - done
+   *
+   * + y letter - done
+   *
+   * + y axis coordinates
+   *    + coordinate 0 - done
+   *     + coordinate horizontal bar - done
+   *     + coordinate number indicate 0 - done
+   *   + coordinate 1
+   *     + coordinate horizontal bar
+   *     + coordinate number indicate 1
+   *   + coordinate 2
+   *     + coordinate horizontal bar
+   *     + coordinate number indicate 2
+   *   + coordinate 3
+   *     + coordinate horizontal bar
+   *     + coordinate number indicate 3
+   *   + coordinate 4
+   *     + coordinate horizontal bar
+   *     + coordinate number indicate 4
+   *   + coordinate 5
+   *     + coordinate horizontal bar
+   *     + coordinate number indicate 5
+   *
+   *
+   *
+   *
+   *
+   * */
+
+  // y axis large vertical bar
+  c.beginPath();
+  c.moveTo(
+    coordinateNumberIndicateX0 + xAxisBarOneUnit * 0,
+    coordinateNumberIndicateY0 - barSize
+  );
+  c.lineTo(coordinateNumberIndicateX0, h / 8);
+  c.stroke();
+
+  /**
+   *   + y axis arrow - done
+   *     + y axis left diagonal bar - done
+   *     + y axis right diagonal bar - done
+   */
+  c.beginPath();
+  c.moveTo(coordinateNumberIndicateX0, h / 8);
+  c.lineTo(coordinateNumberIndicateX0 - barSize, h / 8 + barSize);
+  c.stroke();
+
+  c.beginPath();
+  c.moveTo(coordinateNumberIndicateX0, h / 8);
+  c.lineTo(coordinateNumberIndicateX0 + barSize, h / 8 + barSize);
+  c.stroke();
+
+  // + y letter
+  c.beginPath();
+  c.fillText(
+    "y",
+    coordinateNumberIndicateX0 + xAxisBarOneUnit * 0 - barSize / 2,
+    h / 8 - barSize
+  );
+
+  // + y axis coordinates
+
+  const yAxisBarHeight = Math.abs(
+    h / 8 -
+      (coordinateNumberIndicateY0 - barSize) +
+      spaceBetweenArrowAndTheLastUnit
+  );
+  const yAxisBarOneUnit = yAxisBarHeight / 5;
+
+  for (let i = 5; i >= 1; --i) {
     c.beginPath();
     c.moveTo(
-      coordinateNumberIndicateX0 + xAxisBarOneUnit * indicateNumber,
-      coordinateNumberIndicateY0 - barSize
+      coordinateNumberIndicateX0,
+      coordinateNumberIndicateY0 - barSize - yAxisBarOneUnit * i
     );
     c.lineTo(
-      coordinateNumberIndicateX0 + xAxisBarOneUnit * indicateNumber,
-      coordinateNumberIndicateY0 + barSize
+      coordinateNumberIndicateX0 + barSize,
+      coordinateNumberIndicateY0 - barSize - yAxisBarOneUnit * i
+    );
+    c.stroke();
+
+    c.beginPath();
+    c.moveTo(
+      coordinateNumberIndicateX0,
+      coordinateNumberIndicateY0 - barSize - yAxisBarOneUnit * i
+    );
+    c.lineTo(
+      coordinateNumberIndicateX0 - barSize,
+      coordinateNumberIndicateY0 - barSize - yAxisBarOneUnit * i
     );
     c.stroke();
 
     c.beginPath();
     c.fillText(
-      indicateNumber,
-      coordinateNumberIndicateX0 -
-        barSize / 2 +
-        xAxisBarOneUnit * indicateNumber,
-      coordinateNumberIndicateY0 + barSize + barSize + barSize
+      i,
+      coordinateNumberIndicateX0 - barSize * 3,
+      coordinateNumberIndicateY0 - barSize - yAxisBarOneUnit * i + barSize / 2
     );
   }
-
-  // 2. Y axis
 }
 
 {
