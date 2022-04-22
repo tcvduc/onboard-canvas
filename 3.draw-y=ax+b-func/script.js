@@ -99,7 +99,6 @@ function drawFunction1(my_canvas) {
   const spaceBetweenArrowAndTheLastUnit = 10;
   const xAxisBarOneUnit =
     (xAxisBarWidth - spaceBetweenArrowAndTheLastUnit) / xAxisBarWidthTotalUnit;
-  console.log("xAxisBarWidth: ", xAxisBarWidth);
 
   c.beginPath();
   c.moveTo(moveToX, moveToY);
@@ -281,6 +280,59 @@ function drawFunction1(my_canvas) {
       coordinateNumberIndicateY0 - barSize - yAxisBarOneUnit * i + barSize / 2
     );
   }
+
+  /**
+   * 3. f(x) graph
+   * - y = f(x) = -x + 1
+   * + a = -1
+   * + b = 1
+   *
+   * +  f(0) = -1 x 0 + 1 = 1 = a * 0 + b
+   * -> moveToX = 0, 0 x-axis = coordinateNumberIndicateX0
+   * -> moveToY = f0,
+   * f0 y-axis = coordinateNumberIndicateY0 - barSize - yAxisBarOneUnit * f0
+   *
+   * +  f(1) = -1 x 1 + 1 = 0 = a * 1 + b
+   * -> lineToX = 1,
+   * 1 x-axis =  coordinateNumberIndicateX0 + xAxisBarOneUnit * 1,
+   * -> lineToY = f1
+   *
+   *
+   *
+   */
+  if (a === "" && b === "") {
+    return;
+  }
+
+  const f0 = +a * 0 + +b;
+  const f1 = +a * 1 + +b;
+  console.log("a: ", a);
+  console.log("b: ", b);
+  console.log("f0: ", f0);
+  console.log("f1: ", f1);
+
+  const moveToMaxLengthGraph = w;
+  const lineToMaxLengthGraph = h;
+
+  c.beginPath();
+  // c.moveTo(
+  //   coordinateNumberIndicateX0,
+  //   coordinateNumberIndicateY0 - barSize - yAxisBarOneUnit * f0
+  // );
+  c.moveTo(
+    coordinateNumberIndicateX0 - moveToMaxLengthGraph,
+    coordinateNumberIndicateY0 -
+      barSize -
+      yAxisBarOneUnit * f0 -
+      moveToMaxLengthGraph
+  );
+  c.lineTo(
+    coordinateNumberIndicateX0 + xAxisBarOneUnit * 1 + lineToMaxLengthGraph,
+    coordinateNumberIndicateY0 + lineToMaxLengthGraph
+  );
+  c.lineWidth = 2.5;
+  c.strokeStyle = "#eea833";
+  c.stroke();
 }
 
 {
