@@ -1,0 +1,95 @@
+<style>
+  * {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  #membrane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f2f7f7;
+  }
+
+  .paper {
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 2px 3px 0 rgb(0 0 0 / 10%);
+    min-height: 50px;
+    width: 500px;
+    border-radius: 5px;
+    margin-bottom: 24px;
+    padding: 12px;
+    background-color: #fff;
+  }
+
+  #linearEquationMembrane {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+  }
+
+  #graphMembrane {
+    min-height: 50px;
+  }
+
+  .title {
+    color: #444;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+  }
+
+  #graphCanvas {
+    display: block;
+    width: 500px;
+    height: 420px;
+    /* border: 1px solid #d4d4d4; */
+  }
+
+  #abInput {
+    margin-top: 24px;
+  }
+
+  .input {
+    padding: 12px;
+    margin-right: 12px;
+    border: 1.5px solid #d4d4d4;
+    border-radius: 5px;
+  }
+
+  #drawButton {
+    padding: 12px;
+    background-color: #147f8f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+
+  #drawButton:hover {
+    cursor: pointer;
+  }
+
+  #drawButton:active {
+    background-color: #147f8f9e;
+  }
+</style>
+
+<div id="membrane">
+  <div id="abInput" class="paper">
+    <div class="title">Enter input</div>
+    <input class="input" type="text" placeholder="a " />
+    <input class="input" type="text" placeholder="b " />
+    <button id="drawButton">Draw</button>
+  </div>
+  <div id="linearEquationMembrane" class="paper">
+    <div class="title">Linear Equation</div>
+    <div id="linearEquation">y = ax + b</div>
+  </div>
+  <div id="graphMembrane" class="paper">
+    <div class="title">Graph</div>
+    <canvas id="graphCanvas"></canvas>
+  </div>
+</div>
+
+<script src="./script.js"></script>

@@ -335,6 +335,17 @@ function drawFunction1(my_canvas) {
   c.stroke();
 }
 
+function test1() {
+  /**
+   * y = f(x) = -10x + 10
+   * f(0) = 10
+   * + (x,y) = (0,10)
+   * f(1) = 0
+   *
+   *
+   */
+}
+
 {
   const my_canvas = document.getElementById("my_canvas");
 
